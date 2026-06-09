@@ -4,9 +4,9 @@
   "description": "React app with Webpack, Tailwind CSS, and React Router DOM",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production",
-    "dev": "webpack serve --mode development"
+    "start": "node api.js && webpack serve --mode development --open",
+    "build": "node api.js && webpack --mode production",
+    "dev": "node api.js && webpack serve --mode development"
   },
   "keywords": [
     "react",
