@@ -41,7 +41,11 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
   const isAcceptedRef = useRef(false);
   const hasInitiatedRef = useRef(false);
   const pendingVideoConnectRef = useRef(null);
+  const secondsRef = useRef(0);
   callStateRef.current = callState;
+
+  // Keep secondsRef in sync so socket handlers can read latest value
+  useEffect(() => { secondsRef.current = seconds; }, [seconds]);
 
   const { data: callData } = useGetCallByIdQuery(callState?.callId, {
     skip: !callState?.callId || showFeedback,
@@ -77,7 +81,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
     };
   }, [isOpen, showFeedback, callState?.status, actualStartTime, consultant?.pricePerMinute]);
 
-  // Handle incoming call data
+  // Handle incoming call data (consultant receiving a call)
   useEffect(() => {
     if (incomingCallData && !callState && isOpen && !isClosingRef.current) {
       setCallState({
@@ -90,7 +94,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
     }
   }, [incomingCallData, isOpen]);
 
-  // Poll until both video DOM refs are mounted, then resolve
+  // ✅ Wait for both video DOM refs to be mounted before connecting
   const waitForRefs = useCallback((maxMs = 5000) => {
     return new Promise((resolve, reject) => {
       const start = Date.now();
@@ -127,8 +131,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
     }
   }, [waitForRefs]);
 
-  // When callState becomes 'active', pick up any pending connection params
-  // and connect — this fires after React re-renders the video containers
+  // When callState becomes 'active', pick up pending connection params and connect
   useEffect(() => {
     if (
       callState?.status === 'active' &&
@@ -151,7 +154,9 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
       if (isClosingRef.current || isAcceptedRef.current) return;
       isAcceptedRef.current = true;
 
-      const startTime = data.actualStartTime ? new Date(data.actualStartTime).getTime() : Date.now();
+      const startTime = data.actualStartTime
+        ? new Date(data.actualStartTime).getTime()
+        : Date.now();
       setActualStartTime(startTime);
       setSeconds(0);
       setCurrentBilling(0);
@@ -174,16 +179,20 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
     const handleCallRejected = () => {
       if (isClosingRef.current) return;
       if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
+      twilioVideoService.disconnect();
       toast.error('Call was rejected by consultant');
       setTimeout(() => { if (!isClosingRef.current) closeAll(); }, 500);
     };
 
+    // ✅ FIX: call_ended fires on BOTH sides — handle it here
     const handleCallEnded = (data) => {
       if (isClosingRef.current) return;
       if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
       twilioVideoService.disconnect();
-      const finalSeconds = data?.durationSeconds || seconds;
+
+      const finalSeconds = data?.durationSeconds || secondsRef.current;
       setSeconds(finalSeconds);
+
       if (finalSeconds > 0) {
         setShowFeedback(true);
       } else {
@@ -203,7 +212,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
     };
   }, [isOpen, user?.id, token]);
 
-  // Initiate call (caller side)
+  // Initiate call (caller side only)
   useEffect(() => {
     if (!isOpen || !consultant || incomingCallData || isClosingRef.current) return;
     if (hasInitiatedRef.current) return;
@@ -256,7 +265,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
           closeAll();
         } else {
           const result = await endCall(callStateRef.current.callId).unwrap();
-          const finalDuration = result?.data?.durationSeconds || result?.durationSeconds || seconds;
+          const finalDuration = result?.data?.durationSeconds || result?.durationSeconds || secondsRef.current;
           setSeconds(finalDuration);
           if (finalDuration > 0) {
             setShowFeedback(true);
@@ -270,8 +279,12 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
       }
     } catch (err) {
       console.error('End call error:', err);
-      if (seconds > 0) { setShowFeedback(true); isClosingRef.current = false; }
-      else { closeAll(); }
+      if (secondsRef.current > 0) {
+        setShowFeedback(true);
+        isClosingRef.current = false;
+      } else {
+        closeAll();
+      }
     }
   };
 
@@ -284,11 +297,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
       const tokenToUse = result?.data?.consultantToken || result?.consultantToken || callState.userToken;
       const roomName = result?.call?.roomName || result?.data?.call?.roomName || callState.roomName;
 
-      setCallState(prev => ({
-        ...prev,
-        userToken: tokenToUse,
-        status: 'active',
-      }));
+      setCallState(prev => ({ ...prev, userToken: tokenToUse, status: 'active' }));
       setActualStartTime(Date.now());
       toast.success('Call accepted, connecting...');
 
@@ -301,8 +310,11 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
 
   const closeAll = () => {
     if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
+
+    // ✅ FIX: Only clear video containers if refs still exist and are mounted
     if (remoteVideoRef.current) remoteVideoRef.current.innerHTML = '';
     if (localVideoRef.current) localVideoRef.current.innerHTML = '';
+
     pendingVideoConnectRef.current = null;
     setSeconds(0);
     setCurrentBilling(0);
@@ -352,25 +364,12 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
       className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-[9999] p-4"
       onClick={(e) => e.stopPropagation()}
     >
-      {/*
-        ── IMPORTANT: NO overflow-hidden on this wrapper ──
-        overflow-hidden clips the absolutely-positioned <video> elements
-        that Twilio appends into remoteVideoRef. We use rounded corners
-        via a separate overlay div instead.
-      */}
       <div
         className="relative w-full max-w-sm bg-gray-900 shadow-2xl border border-white/10"
         style={{ aspectRatio: '3/4', maxHeight: '80vh', borderRadius: '1rem' }}
         onClick={e => e.stopPropagation()}
       >
-        {/*
-          Remote video container.
-          - position: relative so Twilio's absolutely-positioned <video>
-            is contained within this div.
-          - overflow: hidden clips video to the rounded card.
-          - The <video> elements appended by twilioVideoService have
-            position:absolute, width:100%, height:100%, object-fit:cover.
-        */}
+        {/* Remote video — full card background */}
         <div
           ref={remoteVideoRef}
           style={{
@@ -384,7 +383,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
           }}
         />
 
-        {/* Pending state overlay */}
+        {/* Pending / waiting state */}
         {callState?.status !== 'active' && (
           <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center z-[5]">
             <div className="w-24 h-24 rounded-full bg-[#D1C4E9] flex items-center justify-center text-[#5E35B1] text-3xl font-bold mb-4">
@@ -423,7 +422,7 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
           </div>
         )}
 
-        {/* Gradient overlay — pointer-events:none so it doesn't block clicks */}
+        {/* Gradient overlay */}
         <div
           className="absolute inset-0 pointer-events-none z-[6]"
           style={{
@@ -432,13 +431,12 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
           }}
         />
 
-        {/* Local Video PiP — rendered only when active so localVideoRef mounts */}
+        {/* Local Video PiP — only rendered when active so ref mounts correctly */}
         {callState?.status === 'active' && (
           <div
             className="absolute top-4 right-4 z-20 bg-gray-700 border-2 border-white/20 shadow-lg"
             style={{ width: '80px', height: '112px', borderRadius: '0.75rem', overflow: 'hidden', position: 'absolute' }}
           >
-            {/* localVideoRef: Twilio appends <video> here with position:absolute fill */}
             <div ref={localVideoRef} style={{ position: 'relative', width: '100%', height: '100%' }} />
             {isVideoOff && (
               <div className="absolute inset-0 bg-gray-800 flex items-center justify-center z-[2]">
@@ -456,14 +454,14 @@ const VideoCallModal = memo(({ isOpen, onClose, consultant, callData: incomingCa
               {callState?.status === 'active'
                 ? `${formatTime(seconds)} | €${currentBilling.toFixed(2)}`
                 : callState?.isIncoming
-                  ? `Incoming call from ${consultant?.name}...`
+                  ? `Incoming from ${consultant?.name}...`
                   : `Calling ${consultant?.name}...`
               }
             </p>
           </div>
         </div>
 
-        {/* Bottom Controls */}
+        {/* Bottom Controls — only when active */}
         {callState?.status === 'active' && (
           <div className="absolute bottom-8 left-0 right-0 z-20">
             <div className="flex items-center justify-center gap-3 px-4">

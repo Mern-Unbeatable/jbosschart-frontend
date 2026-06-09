@@ -67,29 +67,34 @@ class TwilioVideoService {
         return tracks;
     }
 
+    // ✅ FIX 1: Audio attach is now robust — setAttribute + multiple gesture unlocks
     _attachTrack(track, remoteVideoRef) {
         if (track.kind === 'audio') {
             const audioContainer = this._getAudioContainer();
             const el = track.attach();
+
+            // ✅ Set both property AND attribute — some browsers need the attribute
             el.autoplay = true;
             el.playsInline = true;
             el.muted = false;
             el.volume = 1;
+            el.setAttribute('autoplay', '');
+            el.setAttribute('playsinline', '');
+
             audioContainer.appendChild(el);
 
             const tryPlay = () => {
                 const p = el.play();
                 if (p) p.catch(() => setTimeout(() => el.play().catch(() => {}), 500));
             };
+
             tryPlay();
 
-            const unlock = () => {
-                tryPlay();
-                document.removeEventListener('click', unlock);
-                document.removeEventListener('touchstart', unlock);
-            };
-            document.addEventListener('click', unlock);
-            document.addEventListener('touchstart', unlock);
+            // ✅ Unlock on ANY user gesture — covers mobile + desktop
+            const unlock = () => { tryPlay(); };
+            ['click', 'touchstart', 'keydown', 'pointerdown'].forEach(evt =>
+                document.addEventListener(evt, unlock, { once: true, passive: true })
+            );
 
         } else if (track.kind === 'video') {
             if (!remoteVideoRef) return;
@@ -102,41 +107,35 @@ class TwilioVideoService {
             el.style.objectFit = 'cover';
             el.autoplay = true;
             el.playsInline = true;
+            el.setAttribute('autoplay', '');
+            el.setAttribute('playsinline', '');
             remoteVideoRef.appendChild(el);
         }
     }
 
-    // group-small rooms: tracks are NOT auto-subscribed.
-    // Must call publication.subscribe() — trackSubscribed fires on success.
-    // Also listen to trackPublished for tracks published after we joined.
     _attachParticipant(participant, remoteVideoRef) {
         const listeners = [];
 
         const subscribeToPublication = (publication) => {
             if (publication.isSubscribed && publication.track) {
-                // Already subscribed (e.g. rejoining) — attach immediately
                 this._attachTrack(publication.track, remoteVideoRef);
             } else if (!publication.isSubscribed) {
-                // Subscribe — trackSubscribed fires when ready
                 publication.subscribe().catch(err => {
                     console.warn('subscribe() error:', err.message);
                 });
             }
         };
 
-        // Subscribe to all tracks already published by this participant
         participant.tracks.forEach(publication => {
             subscribeToPublication(publication);
         });
 
-        // Subscribe to tracks published after we joined
         const onTrackPublished = (publication) => {
             subscribeToPublication(publication);
         };
         participant.on('trackPublished', onTrackPublished);
         listeners.push({ event: 'trackPublished', fn: onTrackPublished });
 
-        // Attach track once subscription resolves
         const onSubscribed = (track) => {
             this._attachTrack(track, remoteVideoRef);
         };
@@ -161,6 +160,8 @@ class TwilioVideoService {
         this.room = await connectTwilioVideo(token, {
             name: roomName,
             tracks: localTracks,
+            // ✅ FIX 2: Use group-small for proper track subscription behavior
+            type: 'group',
         });
 
         console.log('✅ Connected to video room:', this.room.name);
@@ -177,6 +178,8 @@ class TwilioVideoService {
                 el.style.objectFit = 'cover';
                 el.autoplay = true;
                 el.playsInline = true;
+                el.setAttribute('autoplay', '');
+                el.setAttribute('playsinline', '');
                 localVideoRef.innerHTML = '';
                 localVideoRef.appendChild(el);
             }
@@ -217,6 +220,7 @@ class TwilioVideoService {
 
         console.log('✅ Connected to audio room:', this.room.name);
 
+        // ✅ FIX 3: attach existing participants immediately
         this.room.participants.forEach(participant => {
             this._attachParticipant(participant, null);
         });
