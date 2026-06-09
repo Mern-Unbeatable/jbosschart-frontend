@@ -1,0 +1,670 @@
+{
+  "common": {
+    "home": "Thuis",
+    "entrepreneurship": "Ondernemerschap",
+    "consultants": "Adviseurs",
+    "credit": "Credit",
+    "webshop": "Webwinkel",
+    "donation": "Donatie",
+    "community": "Gemeenschap",
+    "blog": "Bloggen",
+    "faq": "FAQ",
+    "about": "Over",
+    "services": "Diensten",
+    "becomeConsultant": "Word een adviseur",
+    "signIn": "Meld u aan",
+    "signOut": "Uitloggen",
+    "welcome": "Welkom",
+    "welcomeBack": "Welkom terug",
+    "loading": "Laden..."
+  },
+  "language": {
+    "en": "Engels",
+    "nl": "Nederlands",
+    "selectLanguage": "Selecteer taal"
+  },
+  "login": {
+    "title": "Log in op uw account",
+    "subtitle": "Voer uw inloggegevens in om door te gaan naar het dashboard.",
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "selectRole": "Selecteer rol",
+    "role": {
+      "admin": "Beheerder",
+      "user": "Gebruiker",
+      "consultant": "Consultant"
+    },
+    "emailRequired": "E-mail is verplicht.",
+    "emailInvalid": "Voer een geldig e-mailadres in.",
+    "passwordRequired": "Wachtwoord is verplicht.",
+    "roleRequired": "Selecteer een rol.",
+    "signInButton": "Inloggen",
+    "backToHome": "Terug naar Home"
+  },
+  "dashboard": {
+    "admin": {
+      "title": "Beheerder Dashboard",
+      "welcome": "Welkom terug, {{name}}!",
+      "subtitle": "Dit is wat er vandaag gebeurt met uw platform.",
+      "dashboard": "Dashboard",
+      "emails": "E-mails",
+      "leads": "Leads",
+      "orders": "Bestellingen",
+      "marketplaceOrders": "Marktplaats Bestellingen",
+      "caseStudies": "Casestudies",
+      "blog": "Blog",
+      "jobs": "Vacatures",
+      "pricing": "Prijzen"
+    },
+    "user": {
+      "title": "Uw dashboard",
+      "welcome": "Welkom terug, {{name}}!",
+      "subtitle": "Beheer uw sessies, portemonnee en profiel.",
+      "dashboard": "Dashboard",
+      "profile": {
+        "nav": "Profiel",
+        "title": "Mijn profiel",
+        "subtitle": "Beheer uw account- en winkelpinstellingen.",
+        "accountInformationTitle": "Rekeninggegevens",
+        "usernameLabel": "Gebruikersnaam",
+        "emailLabel": "E-mailadres",
+        "phoneLabel": "Telefoonnummer",
+        "updateProfileButton": "Profiel bijwerken",
+        "changePasswordTitle": "Wachtwoord wijzigen",
+        "newPasswordLabel": "Nieuw wachtwoord",
+        "confirmPasswordLabel": "Bevestig nieuw wachtwoord",
+        "updatePasswordButton": "Wachtwoord bijwerken"
+      },
+      "myOrders": "Mijn Bestellingen",
+      "settings": "Instellingen",
+      "stats": {
+        "totalOrders": "Totaal Bestellingen",
+        "activeOrders": "Actieve Bestellingen",
+        "wishlistItems": "Verlanglijst Items",
+        "pendingReviews": "Openstaande Beoordelingen"
+      },
+      "recentActivity": "Recente Activiteit",
+      "noActivity": "Geen recente activiteit om weer te geven.",
+      "walletBalance": {
+        "title": "Portemonnee saldo",
+        "availableMinutes": "Beschikbare minuten",
+        "minutesValue": "150 minuten",
+        "flatRate": "Vast tarief EUR 2,50/min toegepast"
+      },
+      "buyCreditsButton": "Credits kopen",
+      "upcomingSchedule": "Aankomende planning",
+      "scheduleCard": {
+        "statusUpcoming": "Aankomend",
+        "statusComplete": "Voltooid",
+        "callDoctor": "Bel arts",
+        "startVideoCall": "Videogesprek starten",
+        "openChat": "Chat openen",
+        "cancel": "Annuleren"
+      },
+      "bookedSchedule": {
+        "upcomingTitle": "Aankomende planning",
+        "completedTitle": "Voltooide planning"
+      },
+      "orders": {
+        "title": "Zie uw bestellingen",
+        "subtitle": "Volg uw recente en voltooide aankopen op één plek.",
+        "recentOrdersTab": "Recente bestellingen",
+        "completedOrdersTab": "Voltooide bestellingen",
+        "orderIdLabel": "Bestel-ID: #",
+        "cancelButton": "Annuleren"
+      },
+      "sidebar": {
+        "dashboard": "Dashboard",
+        "bookedSchedule": "Afgesproken planning",
+        "chat": "Chat",
+        "orders": "Bestelling",
+        "profile": "Profiel"
+      }
+    },
+    "consultant": {
+      "title": "Consultant Dashboard",
+      "welcome": "Welkom terug, {{name}}!",
+      "subtitle": "Hier is uw prestatieoverzicht voor vandaag.",
+      "dashboard": "Dashboard",
+      "profile": "Profiel",
+      "bookings": "Boekingen",
+      "earnings": "Inkomsten",
+      "settings": "Instellingen",
+      "stats": {
+        "totalBookings": "Totaal Boekingen",
+        "monthlyEarnings": "Inkomsten Deze Maand",
+        "activeClients": "Actieve Klanten",
+        "averageRating": "Gemiddelde Beoordeling"
+      },
+      "upcomingBookings": "Aankomende Boekingen",
+      "noBookings": "Geen aankomende boekingen om weer te geven."
+    },
+    "sidebar": {
+      "mainMenu": "Hoofdmenu",
+      "goToDashboard": "Ga naar dashboard",
+      "closeNavigation": "Navigatie sluiten",
+      "collapseSidebar": "Zijbalk samenvouwen",
+      "expandSidebar": "Zijbalk uitvouwen"
+    }
+  },
+  "errors": {
+    "notFound": "Pagina niet gevonden",
+    "notFoundMessage": "De pagina die u zoekt bestaat niet.",
+    "backToHome": "Terug naar Home"
+  }
+  ,
+  "hero": {
+    "title": "Start direct uw adviesgesprek",
+    "subtitle": "Maak contact met professionele consultants via telefoon, video of chat. Krijg de begeleiding die je nodig hebt, wanneer je die nodig hebt.",
+    "button": "Start consultatie"
+  },
+  "home": {
+    "services": {
+      "telephone": {
+        "title": "Telefonisch advies",
+        "description": "Maak verbinding via een hoogwaardige telefoongesprek voor een persoonlijke ervaring."
+      },
+      "video": {
+        "title": "Video advies",
+        "description": "Gezicht-tot-gezicht sessies voor een diepere verbinding en visuele begeleiding."
+      },
+      "chat": {
+        "title": "Chat advies",
+        "description": "Handig tekstgebaseerd advies voor snelle antwoorden en privacy."
+      }
+    },
+    "consultantsSection": {
+      "title": "Beschikbare adviseurs",
+      "description": "Onze experts staan klaar om u te helpen. Kies een consultant en start uw sessie direct."
+    },
+    "communitySection": {
+      "title": "Sluit u aan bij de gemeenschap",
+      "description": "Stel vragen, deel ervaringen en kom in contact met anderen die een vergelijkbare reis maken. Onze community is een veilige plek voor groei en begrip.",
+      "button": "Ga naar de gemeenschap",
+      "stats": {
+        "activeMembers": "Actieve leden",
+        "discussions": "Discussies",
+        "support": "Ondersteuning"
+      }
+    }
+  },
+  "consultantsHero": {
+    "title": "Vind de perfecte expert voor uw volgende grote project.",
+    "description": "Kom in contact met topconsultants in medische, juridische, technische en creatieve sectoren. Realtime beschikbaarheid en direct boeken.",
+    "searchPlaceholder": "Zoeken...",
+    "filters": {
+      "expertise": {
+        "all": "Alle expertise",
+        "medical": "Medisch",
+        "legal": "Juridisch",
+        "technology": "Technologie",
+        "creative": "Creatief",
+        "finance": "Financiën",
+        "businessStrategy": "Bedrijfsstrategie"
+      },
+      "topics": {
+        "all": "Onderwerpen",
+        "strategy": "Strategie",
+        "development": "Ontwikkeling",
+        "design": "Ontwerp",
+        "marketing": "Marketing",
+        "operations": "Operaties",
+        "leadership": "Leiderschap"
+      }
+    }
+  },
+  "creditPlans": {
+    "badge": "Consultatiecredits",
+    "title": "Credits kopen",
+    "description": "Koop credits om direct consultaties te starten met onze deskundige consultants.",
+    "button": "Credits kopen",
+    "plans": {
+      "basic": {
+        "name": "Basis",
+        "period": "90 minuten",
+        "subText": "90 minuten = €225",
+        "features": {
+          "noHiddenFees": "Geen verborgen kosten",
+          "payOnlyForUse": "Betaal alleen voor wat je gebruikt",
+          "sameRate": "Zelfde tarief voor alle consultants"
+        }
+      },
+      "standard": {
+        "name": "Standaard",
+        "period": "120 minuten",
+        "subText": "Een sessie van 120 minuten kost slechts €246",
+        "features": {
+          "transparentPricing": "Transparante prijzen",
+          "noExtraCharges": "Geen extra kosten",
+          "fairPricing": "Eerlijke prijzen voor iedereen"
+        }
+      },
+      "advanced": {
+        "name": "Geavanceerd",
+        "period": "150 minuten",
+        "subText": "150 minuten = €375",
+        "features": {
+          "noHiddenCosts": "Geen verborgen kosten",
+          "realTimeBilling": "Realtime gebruiksfacturering",
+          "unifiedRate": "Uniform tarief voor alle experts"
+        }
+      }
+    }
+  },
+  "creditBenefits": {
+    "instantUsage": {
+      "title": "Direct gebruik",
+      "description": "€2,50 per minuut gebruik. Credits worden automatisch afgeschreven terwijl u consulteert."
+    },
+    "noHiddenFees": {
+      "title": "Geen verborgen kosten",
+      "description": "Betaal alleen voor wat u gebruikt. Geen abonnement vereist, geen verborgen kosten."
+    },
+    "universalValidity": {
+      "title": "Universele geldigheid",
+      "description": "Geldig voor alle consultants via chat-, bel- en videogesprekken."
+    }
+  },
+  "webshopHero": {
+    "title": "Spirituele webwinkel",
+    "description": "Producten aanbevolen door onze deskundige consultants",
+    "categories": {
+      "all": "Alles",
+      "spiritual": "Spirituele items",
+      "healing": "Genezingsmiddelen",
+      "articles": "Artikelen",
+      "digital": "Digitale producten",
+      "books": "Boeken"
+    }
+  },
+  "focusStrategy": {
+    "eyebrow": "FOCUS EN STRATEGIE",
+    "title": "Online ondernemerschap en duurzame groei opbouwen",
+    "desc1": "Vandaag vraagt online ondernemerschap om meer dan alleen een goed idee of een mooie dienst. Het vraagt om helderheid, strategie, zichtbaarheid en de juiste energie op de juiste plek.",
+    "desc2": "Wij geven u als ondernemer richting, inzicht en vertrouwen om een succesvol bedrijf op te bouwen, zowel online als offline."
+  },
+  "businessPlan": {
+    "title": "Het businessplan: uw basis",
+    "list": {
+      "direction": "Geeft richting en focus",
+      "goals": "Maakt uw doelen concreet",
+      "choices1": "Helpt u betere keuzes te maken",
+      "choices2": "Helpt u betere keuzes te maken",
+      "prevent": "Voorkomt dat u blijft aanmodderen"
+    },
+    "quote": "\"Zonder plan is succes vaak toeval. Met een plan wordt succes bewust en herhaalbaar.\"",
+    "investment": {
+      "title": "Investering & Groei",
+      "description": "Laten we eerlijk zijn. Een bedrijf laten groeien kost tijd, focus, energie en financiele investering.",
+      "highlight": "Slim investeren = sneller groeien met minder stress.\nElke stap heeft maximale impact."
+    }
+  },
+  "coaching": {
+    "mainTitle": "Coaching & Sparringsessie",
+    "mainSubtitle": "Online ondernemerschap met richting",
+    "regularPrice": "Regulier: €229,–",
+    "intensiveSession": "Intensieve sessie van 60 minuten",
+    "inThisSession": "In deze sessie:",
+    "btn": "Boek nu",
+    "points": {
+      "analyze": "We analyseren uw businessmodel",
+      "map": "We brengen blokkades en kansen in kaart",
+      "advice": "Strategisch en direct toepasbaar advies",
+      "tailored": "Op maat voor uw bedrijf en energie"
+    }
+  },
+  "digital": {
+    "title": "Uw digitale basis is essentieel",
+    "description": "Een website moet meer doen dan er alleen goed uitzien. Een goede website bouwt vertrouwen op, stuurt gedrag en zet bezoekers om in klanten.",
+    "agency": {
+      "eyebrow": "Netwerkmediums maakt deel uit van:",
+      "name": "Digital Dutch Agency",
+      "description": "Samen hebben we al honderden bedrijven succesvol geholpen met converterende websites, professionele webshops en sterke SEO."
+    },
+    "stats": {
+      "clients": "Klanten",
+      "seo": "Geoptimaliseerd"
+    }
+  },
+  "entrepreneurshipPage": {
+    "badge": "Spiritueel ondernemerschap",
+    "title": "Ondernemerschap met helderheid, doel en structuur",
+    "description": "Bouw een bedrijf dat in lijn voelt, duurzaam is en klaar om te groeien met de juiste ondersteuning.",
+    "primaryCta": "Boek een consult",
+    "secondaryCta": "Bekijk diensten",
+    "features": {
+      "mainTitle": "Benut uw volledige potentieel",
+      "mainSubtitle": "De meeste ondernemers benutten slechts een klein deel van hun mogelijkheden. Wij helpen u de juiste balans te vinden.",
+      "positioning": {
+        "title": "Positionering & Branding",
+        "desc": "Een authentiek merk dat echt resoneert en blijft hangen."
+      },
+      "website": {
+        "title": "Website & Conversie",
+        "desc": "Technisch sterke websites die bezoekers omzetten in klanten."
+      },
+      "visibility": {
+        "title": "Zichtbaarheid (SEO)",
+        "desc": "Word gevonden door de juiste mensen op het juiste moment."
+      },
+      "communication": {
+        "title": "Communicatie",
+        "desc": "Duidelijke boodschappen die uw doelgroep direct aanspreken."
+      }
+    },
+    "sections": {
+      "foundation": {
+        "eyebrow": "01 / Basis",
+        "title": "Online ondernemerschap en duurzame groei opbouwen",
+        "description": "Wij helpen ondernemers ideeën omzetten in een concreet plan, zodat de volgende stap praktisch wordt in plaats van overweldigend.",
+        "points": [
+          "Maak uw aanbod en doelgroep helder",
+          "Ontwikkel een schaalbaar bedrijfsmodel",
+          "Bouw een werkritme dat vol te houden is"
+        ]
+      },
+      "growth": {
+        "eyebrow": "02 / Groei",
+        "title": "Investeringen en groei",
+        "description": "Richt u op de kanalen, tools en gewoonten die echte vooruitgang opleveren zonder uw richting te verliezen."
+      },
+      "coaching": {
+        "eyebrow": "03 / Ondersteuning",
+        "title": "Coaching en sparringsessie",
+        "price": "Vanaf EUR 149",
+        "description": "Een gerichte sessie voor ondernemers die duidelijke feedback, eerlijke reflectie en praktische volgende stappen willen.",
+        "points": [
+          "Strategie review en plan voor de volgende stap",
+          "Afstemming van merk, content en aanbod",
+          "Zelfvertrouwen, structuur en verantwoordelijkheid"
+        ]
+      },
+      "digital": {
+        "eyebrow": "04 / Digitale basis",
+        "title": "Uw digitale basis is essentieel",
+        "description": "Een heldere digitale aanwezigheid maakt het eenvoudiger voor mensen om uw werk te vertrouwen en uw diensten te boeken.",
+        "stats": {
+          "audits": "Website-audit",
+          "seo": "SEO-gereed"
+        }
+      },
+      "closing": {
+        "title": "Klaar om serieus te groeien?",
+        "description": "Boek een sessie en bouw een ondernemingsplan dat realistisch, in lijn en uitvoerbaar voelt.",
+        "button": "Boek nu"
+      }
+    }
+  },
+  "donationHero": {
+    "title": "Maak vandaag het verschil",
+    "description": "Uw vrijgevigheid kan levens veranderen. Elke bijdrage brengt hoop, steun en een betere toekomst voor degenen die het nodig hebben.",
+    "button": "Nu doneren"
+  },
+  "donation": {
+    "impact": {
+      "title": "Uw donatie heeft impact",
+      "cards": {
+        "feedFamily": {
+          "title": "Voed een gezin",
+          "description": "Bied maaltijden aan gezinnen in nood."
+        },
+        "supportEducation": {
+          "title": "Onderwijs ondersteunen",
+          "description": "Help kinderen toegang te krijgen tot kwalitatief onderwijs."
+        },
+        "medicalSupport": {
+          "title": "Medische ondersteuning",
+          "description": "Zorg voor basisgezondheidszorg voor gemeenschappen."
+        }
+      }
+    },
+    "supportNetwork": {
+      "title": "Support Netwerkmediums",
+      "subtitle": "Gebaseerd op de Wet van Geven en Ontvangen",
+      "quote": "\"Wat je geeft zal in een andere vorm naar je terugkeren.\"",
+      "attribution": "Geïnspireerd door het Deepak Chopra-principe"
+    }
+  },
+  "donationForm": {
+    "header": {
+      "title": "Ondersteuning van netwerkmedia",
+      "subtitle": "Gebaseerd op de wet van geven en ontvangen."
+    },
+    "quote": "\"Wat je geeft zal in een andere vorm naar je terugkeren.\"",
+    "attribution": "Geïnspireerd door het Deepak Chopra-principe",
+    "formHeader": {
+      "title": "Kies je bijdrage",
+      "subtitle": "Uw steun helpt ons groeien en meer zielen bereiken."
+    },
+    "fields": {
+      "name": {
+        "label": "Naam",
+        "placeholder": "Voer uw volledige naam in..."
+      },
+      "email": {
+        "label": "E-mailadres",
+        "placeholder": "Voer uw e-mailadres in..."
+      },
+      "phone": {
+        "label": "Telefoonnummer",
+        "placeholder": "Voer uw telefoonnummer in..."
+      },
+      "amount": {
+        "label": "Bedrag (€)",
+        "placeholder": "bijv. 250"
+      },
+      "businessName": {
+        "label": "Bedrijfsnaam *",
+        "placeholder": "Uw bedrijfsnaam"
+      },
+      "description": {
+        "label": "Beschrijving",
+        "placeholder": "Vertel ons over uw bedrijf..."
+      },
+      "website": {
+        "label": "Website URL",
+        "placeholder": "https://uwbedrijf.com"
+      },
+      "location": {
+        "label": "Locatie",
+        "placeholder": "123 Hoofdstraat, Stad, Provincie"
+      },
+      "image": {
+        "label": "Bedrijfsafbeelding",
+        "placeholder": "Klik om te uploaden of sleep en zet neer"
+      }
+    },
+    "donorType": {
+      "label": "Donateur type",
+      "individual": "Individuele donor",
+      "business": "Zakelijke donor"
+    },
+    "businessType": {
+      "local": "Lokaal bedrijf",
+      "online": "Online bedrijf"
+    },
+    "benefits": {
+      "title": "Voordelen zakelijke donor",
+      "adPlacement": "Website advertentieplaatsing",
+      "visibility": "Zichtbaarheid verbetering"
+    },
+    "button": "€{{amount}} nu doneren"
+  }
+  ,
+  "community": {
+    "page": {
+      "title": "Community Forum",
+      "description": "Stel vragen, deel ervaringen en kom in contact met anderen.",
+      "shareExperience": "Deel een ervaring",
+      "adsTitle": "Advertenties"
+    },
+    "tabs": {
+      "meditation": "Meditatie",
+      "mindfulness": "Mindfulness",
+      "awakening": "Ontwaken"
+    },
+    "categories": {
+      "title": "Categorieën",
+      "spiritualDevelopment": "Spirituele ontwikkeling",
+      "meditation": "Meditatie",
+      "loveLife": "Liefde & leven",
+      "energyHealing": "Energieheling"
+    },
+    "posts": {
+      "replyCount": "{{count}} reacties",
+      "replyPanelTitle": "Antwoord",
+      "close": "Sluiten",
+      "writeReplyPlaceholder": "Schrijf uw antwoord",
+      "sendReplyAria": "Antwoord verzenden",
+      "sampleReplies": [
+        "Ik mediteer dagelijks 15-20 minuten en focus op mijn ademhaling en innerlijk bewustzijn. Het helpt me de hele dag rustig en gecentreerd te blijven.",
+        "Ochtendmindfulness en dankbaarheidsjournaling hebben mijn emotionele balans verbeterd en me geholpen meer positieve energie aan te trekken.",
+        "Ik gebruik vaak kristallen en wierook tijdens mijn spirituele praktijk. Het creëert een vredige omgeving en versterkt mijn focus.",
+        "Ik volg 's avonds begeleide affirmaties en visualisatietechnieken. Het helpt me mijn intenties af te stemmen en met een ontspannen geest te slapen."
+      ],
+      "items": {
+        "innerPeaceMindfulness": {
+          "title": "Innerlijke rust & mindfulness",
+          "description": "Ontwikkel een rustige en evenwichtige geest door meditatie en bewuste aandachtsoefeningen."
+        },
+        "energyHealingAlignment": {
+          "title": "Energieheling & afstemming",
+          "description": "Herstel uw innerlijke energiestroom en verwijder negatieve blokkades voor een gezondere spirituele staat."
+        },
+        "selfDiscoveryAwareness": {
+          "title": "Zelfontdekking & bewustzijn",
+          "description": "Verken uw ware zelf, doel en innerlijke kracht door begeleide spirituele praktijken."
+        },
+        "intuitionSpiritualGrowth": {
+          "title": "Intuïtie & spirituele groei",
+          "description": "Versterk uw intuïtie en verdiep uw verbinding met uw spirituele pad."
+        },
+        "chakraBalancing": {
+          "title": "Chakra-balanceringstechnieken",
+          "description": "Leer hoe u uw energiecentra in balans brengt voor een betere fysieke en mentale gezondheid."
+        },
+        "spiritualAwakeningJourney": {
+          "title": "Reis van spiritueel ontwaken",
+          "description": "Deel uw persoonlijke ervaring van spirituele transformatie en groei."
+        },
+        "dailyMeditationPractices": {
+          "title": "Dagelijkse meditatiepraktijken",
+          "description": "Ontdek eenvoudige maar krachtige meditatietechnieken voor het dagelijks leven."
+        },
+        "energyWorkAndHealing": {
+          "title": "Energiewerk en heling",
+          "description": "Verken de verbinding tussen energiewerk en holistische gezondheid."
+        },
+        "mindfulLivingGuide": {
+          "title": "Gids voor mindful leven",
+          "description": "Transformeer uw leven met mindfulness en bewustzijn."
+        },
+        "spiritualPracticesBeginners": {
+          "title": "Spirituele praktijken voor beginners",
+          "description": "Een uitgebreide gids om uw spirituele reis te beginnen."
+        },
+        "connectingInnerWisdom": {
+          "title": "Verbinding met innerlijke wijsheid",
+          "description": "Ontgrendel uw innerlijke potentieel door spirituele praktijken."
+        },
+        "advancedMeditationTechniques": {
+          "title": "Geavanceerde meditatietechnieken",
+          "description": "Beheers geavanceerde meditatiemethoden voor diepere spirituele ervaringen."
+        }
+      }
+    },
+    "modal": {
+      "title": "Deel uw gedachte",
+      "button": "Plaatsen",
+      "fields": {
+        "title": "Titel",
+        "description": "Beschrijving",
+        "categories": "Categorieën",
+        "subcategory": "Subcategorie"
+      },
+      "placeholders": {
+        "title": "Titel schrijven",
+        "description": "Beschrijving schrijven"
+      },
+      "subcategories": {
+        "meditation": "Meditatie",
+        "mindfulness": "Mindfulness",
+        "awakening": "Ontwaken"
+      }
+    }
+  }
+  ,
+  "blog": {
+    "header": {
+      "badge": "Wijsheid voor de moderne ziel",
+      "title": "Het heiligdom van kennis",
+      "description": "Ontdek onze verzameling spirituele begeleiding, professionele adviesartikelen en platformupdates die uw reis verrijken."
+    },
+    "page": {
+      "adsTitle": "Advertenties",
+      "categories": {
+        "all": "Alles",
+        "spiritualGuidance": "Spirituele begeleiding",
+        "consultancyTips": "Advies tips",
+        "platformUpdates": "Platformupdates",
+        "articles": "Artikelen"
+      },
+      "posts": {
+        "commonDate": "24 okt 2023",
+        "innerPeace": {
+          "title": "Innerlijke rust vinden in een chaotische wereld",
+          "description": "Ontdek praktische stappen om uw spirituele balans te behouden te midden van de dagelijkse drukte van het moderne leven."
+        },
+        "consultancyTips": {
+          "title": "5 tips voor betere bedrijfsadvisering",
+          "description": "Leer de kernprincipes die u helpen vertrouwen op te bouwen en uitzonderlijke waarde te leveren aan uw klanten."
+        },
+        "platformUpdate": {
+          "title": "SoulGuide platformupdate: versie 2.0",
+          "description": "We zijn verheugd nieuwe functies aan te kondigen, waaronder realtime chat en verbeterde spirituele matchingsalgoritmen."
+        }
+      }
+    },
+    "card": {
+      "readMore": "Lees meer"
+    }
+  }
+  ,
+  "footer": {
+    "logoAlt": "Netwerkmediums logo",
+    "copyright": "Copyright © 2026 – netwerkmediums.nl",
+    "taxAndReviews": "Alle prijzen zijn inclusief btw. Klantbeoordelingen: 9.8 / 10 – 3022 reviews",
+    "customerService": {
+      "title": "Klantenservice",
+      "links": {
+        "terms": "Algemene voorwaarden",
+        "privacy": "Privacybeleid",
+        "cookies": "Cookiebeleid",
+        "contact": "Contact",
+        "antiSpam": "Anti-spam beleid",
+        "refund": "Terugbetalingsbeleid",
+        "faq": "FAQ"
+      }
+    },
+    "information": {
+      "title": "Belangrijke informatie",
+      "line1": "Netwerkmediums/",
+      "line2": "Nconsultancy",
+      "address1": "Wijnstraat 75, 3311BT",
+      "address2": "Dordrecht",
+      "email": "info@netwerkmediums.nl"
+    },
+    "map": {
+      "openInMaps": "Openen in Kaarten",
+      "location": "Dhaka, Bangladesh"
+    },
+    "bottomBar": {
+      "copyright": "© 2026 Netwerkmediums. Alle rechten voorbehouden.",
+      "links": {
+        "terms": "Voorwaarden",
+        "privacy": "Privacy",
+        "cookies": "Cookies"
+      }
+    }
+  }
+}

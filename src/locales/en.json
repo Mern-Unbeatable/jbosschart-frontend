@@ -1,0 +1,660 @@
+{
+  "common": {
+    "home": "Home",
+    "entrepreneurship": "Entrepreneurship",
+    "consultants": "Consultants",
+    "credit": "Credit",
+    "webshop": "Webshop",
+    "donation": "Donation",
+    "community": "Community",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "about": "About",
+    "services": "Services",
+    "becomeConsultant": "Become a Consultant",
+    "signIn": "Sign IN",
+    "signOut": "Sign Out",
+    "welcome": "Welcome",
+    "welcomeBack": "Welcome back",
+    "loading": "Loading..."
+  },
+  "language": {
+    "en": "English",
+    "nl": "Dutch",
+    "selectLanguage": "Select Language"
+  },
+  "login": {
+    "title": "Sign in to your account",
+    "subtitle": "Enter your credentials to continue to the dashboard.",
+    "email": "Email Address",
+    "password": "Password",
+    "selectRole": "Select Role",
+    "role": {
+      "admin": "Admin",
+      "user": "User",
+      "consultant": "Consultant"
+    },
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Please enter a valid email address.",
+    "passwordRequired": "Password is required.",
+    "roleRequired": "Please select a role.",
+    "signInButton": "Sign In",
+    "backToHome": "Back to Home"
+  },
+  "dashboard": {
+    "admin": {
+      "title": "Admin Dashboard",
+      "welcome": "Welcome back, {{name}}!",
+      "subtitle": "Here's what's happening with your platform today.",
+      "dashboard": "Dashboard",
+      "emails": "Emails",
+      "leads": "Leads",
+      "orders": "Orders",
+      "marketplaceOrders": "Marketplace Orders",
+      "caseStudies": "Case Studies",
+      "blog": "Blog",
+      "jobs": "Jobs",
+      "pricing": "Pricing"
+    },
+    "user": {
+      "title": "Your Dashboard",
+      "welcome": "Welcome back, {{name}}!",
+      "subtitle": "Manage your sessions, wallet and profile.",
+      "dashboard": "Dashboard",
+      "profile": {
+        "nav": "Profile",
+        "title": "My Profile",
+        "subtitle": "Manage your account and store preferences.",
+        "accountInformationTitle": "Account Information",
+        "usernameLabel": "Username",
+        "emailLabel": "Email",
+        "phoneLabel": "Phone Number",
+        "updateProfileButton": "Update Profile",
+        "changePasswordTitle": "Change Password",
+        "newPasswordLabel": "New Password",
+        "confirmPasswordLabel": "Confirm New Password",
+        "updatePasswordButton": "Update Password"
+      },
+      "myOrders": "My Orders",
+      "settings": "Settings",
+      "stats": {
+        "totalOrders": "Total Orders",
+        "activeOrders": "Active Orders",
+        "wishlistItems": "Wishlist Items",
+        "pendingReviews": "Pending Reviews"
+      },
+      "recentActivity": "Recent Activity",
+      "noActivity": "No recent activity to display.",
+      "walletBalance": {
+        "title": "Wallet Balance",
+        "availableMinutes": "Available Minutes",
+        "minutesValue": "150 Minutes",
+        "flatRate": "Flat rate EUR2.50/min applied"
+      },
+      "buyCreditsButton": "Buy Credits",
+      "upcomingSchedule": "Upcoming Schedule",
+      "scheduleCard": {
+        "statusUpcoming": "Upcoming",
+        "statusComplete": "Complete",
+        "callDoctor": "Call doctor",
+        "startVideoCall": "Start video call",
+        "openChat": "Open chat",
+        "cancel": "Cancel"
+      },
+      "bookedSchedule": {
+        "upcomingTitle": "Upcoming Schedule",
+        "completedTitle": "Completed Schedule"
+      },
+      "orders": {
+        "title": "See Your Orders",
+        "subtitle": "Track your recent and completed purchases in one place.",
+        "recentOrdersTab": "Recent Orders",
+        "completedOrdersTab": "Completed Orders",
+        "orderIdLabel": "Order ID: #",
+        "cancelButton": "Cancel"
+      },
+      "sidebar": {
+        "dashboard": "Dashboard",
+        "bookedSchedule": "Booked Schedule",
+        "chat": "Chat",
+        "orders": "Order",
+        "profile": "Profile"
+      }
+    },
+    "consultant": {
+      "title": "Consultant Dashboard",
+      "welcome": "Welcome back, {{name}}!",
+      "subtitle": "Here's your performance overview for today.",
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "bookings": "Bookings",
+      "earnings": "Earnings",
+      "settings": "Settings",
+      "stats": {
+        "totalBookings": "Total Bookings",
+        "monthlyEarnings": "This Month Earnings",
+        "activeClients": "Active Clients",
+        "averageRating": "Average Rating"
+      },
+      "upcomingBookings": "Upcoming Bookings",
+      "noBookings": "No upcoming bookings to display."
+    },
+    "sidebar": {
+      "mainMenu": "Main Menu",
+      "goToDashboard": "Go to Dashboard",
+      "closeNavigation": "Close navigation",
+      "collapseSidebar": "Collapse sidebar",
+      "expandSidebar": "Expand sidebar"
+    }
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "notFoundMessage": "The page you are looking for does not exist.",
+    "backToHome": "Back to Home"
+  },
+  "hero": {
+    "title": "Start your consultation instantly",
+    "subtitle": "Connect with professional consultants via call, video, or chat. Get the guidance you need, when you need it.",
+    "button": "Start consultation"
+  },
+  "home": {
+    "services": {
+      "telephone": {
+        "title": "Telephone Consultation",
+        "description": "Connect via high-quality voice call for a personal experience."
+      },
+      "video": {
+        "title": "Video Consultation",
+        "description": "Face-to-face sessions for a deeper connection and visual guidance."
+      },
+      "chat": {
+        "title": "Chat Consultation",
+        "description": "Convenient text-based consultation for quick answers and privacy."
+      }
+    },
+    "consultantsSection": {
+      "title": "Available Consultants",
+      "description": "Our experts are ready to help you. Choose a consultant and start your session immediately."
+    },
+    "communitySection": {
+      "title": "Join the Community",
+      "description": "Ask questions, share experiences, and connect with others who are on a similar journey. Our community is a safe space for growth and understanding.",
+      "button": "Go to Community",
+      "stats": {
+        "activeMembers": "Active Members",
+        "discussions": "Discussions",
+        "support": "Support"
+      }
+    }
+  },
+  "consultantsHero": {
+    "title": "Find the perfect expert for your next big project.",
+    "description": "Connect with top-tier consultants across medical, legal, tech, and creative industries. Real-time availability and instant booking.",
+    "searchPlaceholder": "Search...",
+    "filters": {
+      "expertise": {
+        "all": "All expertise",
+        "medical": "Medical",
+        "legal": "Legal",
+        "technology": "Technology",
+        "creative": "Creative",
+        "finance": "Finance",
+        "businessStrategy": "Business Strategy"
+      },
+      "topics": {
+        "all": "Topics",
+        "strategy": "Strategy",
+        "development": "Development",
+        "design": "Design",
+        "marketing": "Marketing",
+        "operations": "Operations",
+        "leadership": "Leadership"
+      }
+    }
+  },
+  "creditPlans": {
+    "badge": "Consultation Credits",
+    "title": "Buy Credits",
+    "description": "Purchase credits to start consultations instantly with our expert consultants.",
+    "button": "Buy Credits",
+    "plans": {
+      "basic": {
+        "name": "Basic",
+        "period": "90 minute",
+        "subText": "90 minutes = €225",
+        "features": {
+          "noHiddenFees": "No hidden fees",
+          "payOnlyForUse": "Pay only for what you use",
+          "sameRate": "Same rate for all consultants"
+        }
+      },
+      "standard": {
+        "name": "Standard",
+        "period": "120 minute",
+        "subText": "A 120-minute session costs just €246",
+        "features": {
+          "transparentPricing": "Transparent pricing",
+          "subText": "150 minutes = €375",
+          "features": {
+            "noHiddenCosts": "No hidden costs",
+            "realTimeBilling": "Real-time usage billing",
+            "unifiedRate": "Unified rate for all experts"
+          }
+        }
+      }
+    },
+    "creditBenefits": {
+      "instantUsage": {
+        "title": "Instant Usage",
+        "description": "€2.50 per minute usage. Credits will be deducted automatically as you consult."
+      },
+      "noHiddenFees": {
+        "title": "No Hidden Fees",
+        "description": "Pay only for what you use. No subscription required, no hidden charges."
+      },
+      "universalValidity": {
+        "title": "Universal Validity",
+        "description": "Valid for all consultants across chat, call, and video consultations."
+      }
+    }
+  },
+  "donationHero": {
+    "title": "Make a Difference Today",
+    "description": "Your generosity can change lives. Every contribution brings hope, support, and a brighter future to those in need.",
+    "button": "Donate Now"
+  },
+  "donation": {
+    "impact": {
+      "title": "Your Donation Makes an Impact",
+      "cards": {
+        "feedFamily": {
+          "title": "Feed a Family",
+          "description": "Provide meals to families in need."
+        },
+        "supportEducation": {
+          "title": "Support Education",
+          "description": "Help children access quality education."
+        },
+        "medicalSupport": {
+          "title": "Medical Support",
+          "description": "Ensure basic healthcare for communities."
+        }
+      }
+    },
+    "supportNetwork": {
+      "title": "Support Network",
+      "subtitle": "Based on the Law of Giving and Receiving",
+      "quote": "\"What you give will return to you in another form.\"",
+      "attribution": "Inspired by the Deepak Chopra Principle"
+    }
+  },
+  "donationForm": {
+    "header": {
+      "title": "Support Network mediums",
+      "subtitle": "Based on the Law of Giving and Receiving"
+    },
+    "quote": "\"What you give will return to you in another form.\"",
+    "attribution": "Inspired by the Deepak Chopra Principle",
+    "formHeader": {
+      "title": "Choose Your Contribution",
+      "subtitle": "Your support helps us grow and reach more souls."
+    },
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Enter your full name..."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email..."
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "Enter your phone number..."
+      },
+      "amount": {
+        "label": "Amount (€)",
+        "placeholder": "e.g. 250"
+      },
+      "businessName": {
+        "label": "Business Name *",
+        "placeholder": "Your Business Name"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Tell us about your business..."
+      },
+      "website": {
+        "label": "Website URL",
+        "placeholder": "https://yourbusiness.com"
+      },
+      "location": {
+        "label": "Location",
+        "placeholder": "123 Main St, City, State"
+      },
+      "image": {
+        "label": "Business Image",
+        "placeholder": "Click to upload or drag and drop"
+      }
+    },
+    "donorType": {
+      "label": "Donor Type",
+      "individual": "Individual Donor",
+      "business": "Business Donor"
+    },
+    "businessType": {
+      "local": "Local Business",
+      "online": "Online Business"
+    },
+    "benefits": {
+      "title": "Business Donor Benefits",
+      "adPlacement": "Website ad placement",
+      "visibility": "Visibility boost"
+    },
+    "button": "Donate €{{amount}} Now"
+  },
+  "community": {
+    "page": {
+      "title": "Community Forum",
+      "description": "Ask questions, share experiences, connect with others.",
+      "shareExperience": "Share an Experience",
+      "adsTitle": "Ads"
+    },
+    "tabs": {
+      "meditation": "Meditation",
+      "mindfulness": "Mindfulness",
+      "awakening": "Awakening"
+    },
+    "categories": {
+      "title": "Categories",
+      "spiritualDevelopment": "Spiritual Development",
+      "meditation": "Meditation",
+      "loveLife": "Love & Life",
+      "energyHealing": "Energy Healing"
+    },
+    "posts": {
+      "replyCount": "{{count}} Replies",
+      "replyPanelTitle": "Reply",
+      "close": "Close",
+      "writeReplyPlaceholder": "Write your reply",
+      "sendReplyAria": "Send reply",
+      "sampleReplies": [
+        "I practice meditation for 15-20 minutes daily, focusing on my breath and inner awareness. It helps me stay calm and centered throughout the day.",
+        "Morning mindfulness and gratitude journaling have improved my emotional balance and helped me attract more positive energy.",
+        "I often use crystals and incense during my spiritual practice. It creates a peaceful environment and enhances my focus.",
+        "I follow guided affirmations and visualization techniques at night. It helps me align my intentions and sleep with a relaxed mind."
+      ],
+      "items": {
+        "innerPeaceMindfulness": {
+          "title": "Inner Peace & Mindfulness",
+          "description": "Develop a calm and balanced mind through meditation and mindful awareness practices."
+        },
+        "energyHealingAlignment": {
+          "title": "Energy Healing & Alignment",
+          "description": "Restore your inner energy flow and remove negative blockages for a healthier spiritual state."
+        },
+        "selfDiscoveryAwareness": {
+          "title": "Self-Discovery & Awareness",
+          "description": "Explore your true self, purpose, and inner strengths through guided spiritual practices."
+        },
+        "intuitionSpiritualGrowth": {
+          "title": "Intuition & Spiritual Growth",
+          "description": "Strengthen your intuition and deepen your connection with your spiritual path."
+        },
+        "chakraBalancing": {
+          "title": "Chakra Balancing Techniques",
+          "description": "Learn how to balance your energy centers for better physical and mental health."
+        },
+        "spiritualAwakeningJourney": {
+          "title": "Spiritual Awakening Journey",
+          "description": "Share your personal experience of spiritual transformation and growth."
+        },
+        "dailyMeditationPractices": {
+          "title": "Daily Meditation Practices",
+          "description": "Discover simple yet powerful meditation techniques for everyday life."
+        },
+        "energyWorkAndHealing": {
+          "title": "Energy Work and Healing",
+          "description": "Explore the connection between energy work and holistic health."
+        },
+        "mindfulLivingGuide": {
+          "title": "Mindful Living Guide",
+          "description": "Transform your life with mindfulness and conscious awareness."
+        },
+        "spiritualPracticesBeginners": {
+          "title": "Spiritual Practices for Beginners",
+          "description": "A comprehensive guide to starting your spiritual journey."
+        },
+        "connectingInnerWisdom": {
+          "title": "Connecting with Inner Wisdom",
+          "description": "Unlock your inner potential through spiritual practices."
+        },
+        "advancedMeditationTechniques": {
+          "title": "Advanced Meditation Techniques",
+          "description": "Master advanced meditation methods for deeper spiritual experiences."
+        }
+      }
+    },
+    "modal": {
+      "title": "Share Your Thought",
+      "button": "Post",
+      "fields": {
+        "title": "Title",
+        "description": "Description",
+        "categories": "Categories",
+        "subcategory": "Subcategory"
+      },
+      "placeholders": {
+        "title": "Write title",
+        "description": "Write description"
+      },
+      "subcategories": {
+        "meditation": "Meditation",
+        "mindfulness": "Mindfulness",
+        "awakening": "Awakening"
+      }
+    }
+  },
+  "blog": {
+    "header": {
+      "badge": "Wisdom for the Modern Soul",
+      "title": "The Sanctuary of Knowledge",
+      "description": "Explore our collection of spiritual guidance, professional consultancy tips, and platform updates designed to elevate your journey."
+    },
+    "page": {
+      "adsTitle": "Ads",
+      "categories": {
+        "all": "All",
+        "spiritualGuidance": "Spiritual Guidance",
+        "consultancyTips": "Consultancy Tips",
+        "platformUpdates": "Platform Updates",
+        "articles": "Articles"
+      },
+      "posts": {
+        "commonDate": "Oct 24, 2023",
+        "innerPeace": {
+          "title": "Finding Inner Peace in a Chaotic World",
+          "description": "Discover practical steps to maintain your spiritual balance amidst the daily hustle and bustle of modern life."
+        },
+        "consultancyTips": {
+          "title": "5 Tips for Better Business Consultancy",
+          "description": "Learn the core principles that will help you build trust and deliver exceptional value to your clients."
+        },
+        "platformUpdate": {
+          "title": "SoulGuide Platform Update: Version 2.0",
+          "description": "We are excited to announce new features including real-time chat and enhanced spiritual matching algorithms."
+        }
+      }
+    },
+    "card": {
+      "readMore": "Read More"
+    }
+  },
+  "footer": {
+    "logoAlt": "Netwerkmediums Logo",
+    "copyright": "Copyright © 2026 – netwerkmediums.nl",
+    "taxAndReviews": "All prices include VAT. Customer reviews: 9.8 / 10 – 3022 reviews",
+    "customerService": {
+      "title": "Customer Service",
+      "links": {
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookie Policy",
+        "contact": "Contact",
+        "antiSpam": "Anti-Spam Policy",
+        "refund": "Refund Policy",
+        "faq": "FAQ"
+      }
+    },
+    "information": {
+      "title": "Important Information",
+      "line1": "Netwerkmediums/",
+      "line2": "Nconsultancy",
+      "address1": "Wijnstraat 75, 3311BT",
+      "address2": "Dordrecht",
+      "email": "info@netwerkmediums.nl"
+    },
+    "map": {
+      "openInMaps": "Open in Maps",
+      "location": "Dhaka, Bangladesh"
+    },
+    "bottomBar": {
+      "copyright": "© 2026 Netwerkmediums. All rights reserved.",
+      "links": {
+        "terms": "Terms",
+        "privacy": "Privacy",
+        "cookies": "Cookies"
+      }
+    }
+  },
+  "webshopHero": {
+    "title": "Spiritual Webshop",
+    "description": "Products recommended by our expert consultants",
+    "categories": {
+      "all": "All",
+      "spiritual": "Spiritual items",
+      "healing": "Healing tools",
+      "articles": "Articles",
+      "digital": "Digital products",
+      "books": "Books"
+    }
+  },
+  "focusStrategy": {
+    "eyebrow": "FOCUS AND STRATEGY",
+    "title": "Online entrepreneurship & creating sustainable success",
+    "desc1": "Today, online entrepreneurship requires more than just a good idea or a beautiful service. It requires clarity, strategy, visibility, and the right energy in the right place.",
+    "desc2": "We give you as an entrepreneur direction, insight, and confidence in building a successful business, both online and offline."
+  },
+  "businessPlan": {
+    "title": "The business plan: your foundation",
+    "list": {
+      "direction": "Provides direction and focus",
+      "goals": "Makes your goals concrete",
+      "choices1": "Helps you make better choices",
+      "choices2": "Helps you make better choices",
+      "prevent": "Prevents you from 'muddling through'"
+    },
+    "quote": "\"Without a plan, success is often accidental. With a plan, success becomes conscious and repeatable.\"",
+    "investment": {
+      "title": "Investment & Growth",
+      "description": "Let's be honest. Growing a business takes time, focus, energy, and financial investment.",
+      "highlight": "Investing smart = growing faster with less stress.\nEvery step has maximum impact."
+    }
+  },
+  "coaching": {
+    "mainTitle": "Coaching & Sparring session",
+    "mainSubtitle": "Online entrepreneurship with direction",
+    "regularPrice": "Regular: €229,–",
+    "intensiveSession": "Intensive 60-minute session",
+    "inThisSession": "In this session:",
+    "btn": "Book now",
+    "points": {
+      "analyze": "We analyze your business model",
+      "map": "We map out blockages and opportunities",
+      "advice": "Strategic and directly applicable advice",
+      "tailored": "Tailored to your business and energy"
+    }
+  },
+  "digital": {
+    "title": "Your digital foundation is essential",
+    "description": "A website must do more than just look good. A good website builds trust, guides behavior, and turns visitors into customers.",
+    "agency": {
+      "eyebrow": "Netwerkmediums is part of:",
+      "name": "Digital Dutch Agency",
+      "description": "Together, we have successfully helped hundreds of businesses with converting websites, professional webshops, and strong SEO."
+    },
+    "stats": {
+      "clients": "Clients",
+      "seo": "Optimized"
+    }
+  },
+  "entrepreneurshipPage": {
+    "badge": "Spiritual entrepreneurship",
+    "title": "Entrepreneurship with clarity, purpose and structure",
+    "description": "Take the right steps today to experience online success. For startups and entrepreneurs who want to push forward.",
+    "primaryCta": "Book a consultation",
+    "secondaryCta": "Explore services",
+    "features": {
+      "mainTitle": "Harness your full potential",
+      "mainSubtitle": "Most entrepreneurs only utilize a small part of their possibilities. We help you find the balance.",
+      "positioning": {
+        "title": "Positioning & Branding",
+        "desc": "An authentic brand that truly resonates and sticks."
+      },
+      "website": {
+        "title": "Website & Conversion",
+        "desc": "Technically strong sites that convert visitors into customers."
+      },
+      "visibility": {
+        "title": "Visibility (SEO)",
+        "desc": "Be found by the right people at the right time."
+      },
+      "communication": {
+        "title": "Communication",
+        "desc": "Clear messages that directly appeal to your target audience."
+      }
+    },
+    "sections": {
+      "foundation": {
+        "eyebrow": "01 / Foundation",
+        "title": "Online entrepreneurship and creating sustainable success",
+        "description": "We help founders turn ideas into a grounded plan, so the next step is practical instead of overwhelming.",
+        "points": [
+          "Clarify your offer and audience",
+          "Shape a business model that can scale",
+          "Create a weekly rhythm you can maintain"
+        ]
+      },
+      "growth": {
+        "eyebrow": "02 / Growth",
+        "title": "Investments and growth",
+        "description": "Focus on the channels, tools and habits that create measurable momentum without losing your direction."
+      },
+      "coaching": {
+        "eyebrow": "03 / Support",
+        "title": "Coaching and sparring session",
+        "price": "From EUR 149",
+        "description": "A focused session for entrepreneurs who want clear feedback, honest reflection and practical next steps.",
+        "points": [
+          "Strategy review and next-step plan",
+          "Brand, content and offer alignment",
+          "Confidence, structure and accountability"
+        ]
+      },
+      "digital": {
+        "eyebrow": "04 / Digital foundation",
+        "title": "Your digital foundation is essential",
+        "description": "A clean digital presence makes it easier for people to trust your work and book your services.",
+        "stats": {
+          "audits": "Website audit",
+          "seo": "SEO readiness"
+        }
+      },
+      "closing": {
+        "title": "Ready to seriously grow?",
+        "description": "Book a session and build a business plan that feels realistic, aligned and actionable.",
+        "button": "Book now"
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+
+@theme {
+  --font-crimson: 'Crimson Pro', serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --color-btn-primary: #7BC47F;
+}
+
+* {
+  font-family: 'Crimson Pro', serif;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+/* Custom classes for manual override */
+.font-crimson {
+  font-family: 'Crimson Pro', serif !important;
+}
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
+:root {
+  --primary-text-color: #373737;
+  --primary-text-heading-color: #0c0c0c;
+  --secondary-text-color: #ffffff;
+  --ternary-text-color: #525252;
+  --button-bg: #7bc47f;
+}
+
+
+@keyframes nav-arrow {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes nav-pop {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  45% {
+    transform: translateY(-2px) scale(1.04);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modal-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-slide-down {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+}
+
+@layer utilities {
+  .animate-nav-arrow {
+    animation: nav-arrow 1.2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  button {
+    @apply cursor-pointer;
+  }
+
+  .btn-bg-primary {
+    background-color: var(--button-bg);
+  }
+
+  .bg-prim {
+    background-color: var(--color-primary);
+  }
+
+  .dashboard-page-title {
+    @apply text-2xl md:text-3xl lg:text-4xl leading-tight font-semibold text-[#050609];
+  }
+
+  .dashboard-page-subtitle {
+    @apply text-base leading-6 text-[#464646];
+  }
+
+  .scrollbar-light {
+    scrollbar-width: auto;
+    scrollbar-color: #cfd3da #f1f3f6;
+  }
+
+  .scrollbar-light::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  .scrollbar-light::-webkit-scrollbar-track {
+    background: #f1f3f6;
+    border-radius: 9999px;
+  }
+
+  .scrollbar-light::-webkit-scrollbar-thumb {
+    background: #cfd3da;
+    border-radius: 9999px;
+    border: 2px solid #f1f3f6;
+  }
+
+  .scrollbar-light::-webkit-scrollbar-thumb:hover {
+    background: #bcc2cc;
+  }
+
+  .animate-nav-pop {
+    animation: nav-pop 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .animate-modal-overlay {
+    animation: modal-fade-in 220ms ease-out both;
+    will-change: opacity;
+  }
+
+  .animate-modal-overlay-out {
+    animation: modal-fade-out 220ms ease-out both;
+    will-change: opacity;
+  }
+
+  .animate-modal-panel {
+    animation: modal-slide-up 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    will-change: transform, opacity;
+    transform-origin: center;
+  }
+
+  .animate-modal-panel-out {
+    animation: modal-slide-down 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    will-change: transform, opacity;
+    transform-origin: center;
+  }
+}
